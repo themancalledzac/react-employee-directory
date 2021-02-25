@@ -1,17 +1,17 @@
 import React from "react";
 
-const Filters = (handleInputChange) => {
+const Filters = ({ handleInputChange }) => {
   return (
-    <div className='card'>
+    <div className='card mb-5'>
       <div className='card-body'>
         <form>
           <div className='form-group'>
-            <label for='nameFilter'>Filter By Name</label>
+            <label htmlFor='nameFilter'>Filter By Name</label>
             <input
               type='text'
               className='form-control'
               id='nameFilter'
-              // what about these two
+              // name is how we identify what this input is called so we can find it later in other parts of the application
               name='search'
               onChange={handleInputChange}
             />

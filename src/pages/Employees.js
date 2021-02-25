@@ -1,6 +1,7 @@
 import React from "react";
 import API from "../utils/API";
 import EmployeeCard from "../components/EmployeeCard";
+import Filters from "../components/Filters.js";
 
 class Employees extends React.Component {
   state = {
@@ -31,8 +32,9 @@ class Employees extends React.Component {
   render() {
     return (
       <div>
-        <h1>Employee List</h1>
-        <EmployeeCard users={this.state.users} />
+        {this.state.search}
+        <Filters handleInputChange={this.handleInputChange} />
+        <EmployeeCard users={this.state.users} search={this.state.search} />
       </div>
     );
   }
