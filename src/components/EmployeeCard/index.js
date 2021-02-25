@@ -21,7 +21,12 @@ function EmployeeCard({ users }) {
               <h2 className='card-text'>
                 {user.name.first} {user.name.last}
               </h2>
-              <h3 className='card-text'>age: {user.dob.age}</h3>
+              <h5 className='card-text'>Age: {user.dob.age}</h5>
+              <h5 className='card-text'>Phone: {user.phone}</h5>
+              <h5 className='card-text'>{user.location.country}</h5>
+              <h5 className='card-text'>
+                <a href={user.email}>Email</a>
+              </h5>
             </div>
           ))}
       </div>
