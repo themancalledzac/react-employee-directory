@@ -1,15 +1,18 @@
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
-import Api from "./components/Api";
-import Body from "./components/Body";
-import Header from "./components/Header";
+import Navbar from "./components/Navbar";
+import Employees from "./pages/Employees";
+import About from "./pages/About";
 
 function App() {
   return (
-    <>
-      <Header />
-      <Body />
-      <Api />
-    </>
+    <Router>
+      <div>
+        <Navbar />
+        <Route exact path='/' component={About} />
+        <Route exact path='/employees' component={Employees} />
+      </div>
+    </Router>
   );
 }
 
