@@ -14,7 +14,7 @@ const Footer = () => {
       <div>
         <ul className='navbar-nav'>
           <li className='nav-item'>
-            <a className='nav-link' href='www.zacedens.com'>
+            <a className='nav-link' href='https://zacedens.com'>
               Portfolio
             </a>
           </li>

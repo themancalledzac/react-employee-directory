@@ -1,12 +1,12 @@
 import React from "react";
 
-const Filters = ({ handleInputChange }) => {
+const Filters = ({ search, handleInputChange }) => {
   return (
     <div className='card mb-5' style={{ margin: "2rem", borderRadius: "7px" }}>
       <div className='card-body'>
         <form>
           <div className='form-group'>
-            <label htmlFor='nameFilter'>Filter By Name</label>
+            <label htmlFor='nameFilter'>Filter By {search}</label>
             <input
               type='text'
               className='form-control'

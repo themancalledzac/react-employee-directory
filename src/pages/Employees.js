@@ -40,7 +40,7 @@ function Employees() {
   return (
     <div>
       {search}
-      <Filters handleInputChange={handleInputChange} />
+      <Filters search={search} handleInputChange={handleInputChange} />
       <EmployeeCard users={users} search={search} />
     </div>
   );

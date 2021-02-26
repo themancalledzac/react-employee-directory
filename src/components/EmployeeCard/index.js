@@ -1,13 +1,11 @@
 import React from "react";
 
-function EmployeeCard({ users }) {
+function EmployeeCard({ search, users }) {
   return (
     <div className='card' style={{ margin: "2rem", borderRadius: "7px" }}>
       <div className='card-body' style={{ display: "flex", flexWrap: "wrap" }}>
         {users
-          // .filter((user) => {
-          //   // return true or false: check if search is in the first or last name
-          // })
+          // .filter((filterUser) => filterUser.includes({ search }))
           .map((user) => (
             <div
               className='card-body'
