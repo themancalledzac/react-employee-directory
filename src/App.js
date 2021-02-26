@@ -3,15 +3,17 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import Employees from "./pages/Employees";
 import About from "./pages/About";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <Router>
-      <div>
+      <>
         <Navbar />
         <Route exact path='/' component={About} />
         <Route exact path='/employees' component={Employees} />
-      </div>
+        <Footer />
+      </>
     </Router>
   );
 }

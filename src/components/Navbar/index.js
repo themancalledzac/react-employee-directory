@@ -1,17 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./style.css";
 
 const Navbar = () => {
   return (
-    <nav className='navbar navbar-expand-lg navbar-light bg-light'>
-      <Link className='navbar-brand' to='/'>
+    <nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
+      <NavLink className='navbar-brand' to='/'>
         Employee Directory
-      </Link>
+      </NavLink>
       <div>
         <ul className='navbar-nav'>
           <li className='nav-item'>
-            <Link
+            <NavLink
               to='/'
               className={
                 window.location.pathname === "/" ||
@@ -21,10 +21,10 @@ const Navbar = () => {
               }
             >
               About
-            </Link>
+            </NavLink>
           </li>
           <li className='nav-item'>
-            <Link
+            <NavLink
               to='employees'
               className={
                 window.location.pathname === "/employees"
@@ -33,7 +33,7 @@ const Navbar = () => {
               }
             >
               Employees
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </div>

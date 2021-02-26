@@ -2,7 +2,7 @@ import React from "react";
 
 const Filters = ({ handleInputChange }) => {
   return (
-    <div className='card mb-5'>
+    <div className='card mb-5' style={{ margin: "2rem", borderRadius: "7px" }}>
       <div className='card-body'>
         <form>
           <div className='form-group'>

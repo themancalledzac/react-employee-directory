@@ -2,7 +2,7 @@ import React from "react";
 
 function EmployeeCard({ users }) {
   return (
-    <div className='card' style={{ margin: "2rem" }}>
+    <div className='card' style={{ margin: "2rem", borderRadius: "7px" }}>
       <div className='card-body' style={{ display: "flex", flexWrap: "wrap" }}>
         {users
           // .filter((user) => {
@@ -16,7 +16,7 @@ function EmployeeCard({ users }) {
               <img
                 alt='portrait'
                 src={user.picture.large}
-                style={{ maxWidth: "300px" }}
+                style={{ maxWidth: "300px", borderRadius: "7px" }}
               />
               <h2 className='card-text'>
                 {user.name.first} {user.name.last}

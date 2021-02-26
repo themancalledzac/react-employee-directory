@@ -1,43 +1,49 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import API from "../utils/API";
 import EmployeeCard from "../components/EmployeeCard";
-import Filters from "../components/Filters.js";
+import Filters from "../components/Filters.js/index.js";
 
-class Employees extends React.Component {
-  state = {
-    users: [],
-    search: "",
-  };
+function Employees() {
+  const [users, setUsers] = useState([]);
+  const [search, setSearch] = useState("");
+  // state = {
+  //   users: [],
+  //   search: "",
+  // };
 
-  componentDidMount() {
-    this.createEmployees();
-  }
-
-  createEmployees = (query) => {
-    API.getEmployees(query)
-      .then((res) => this.setState({ users: res.data.results }))
+  useEffect(() => {
+    // ----TODO ---- stop auto-updating useEffect
+    // if (!users) {
+    API.getEmployees()
+      .then((res) => {
+        if (res.data.length === 0) {
+          throw new Error("No results found.");
+        }
+        if (res.data.status === "error") {
+          throw new Error(res.data.message);
+        }
+        setUsers(res.data.results);
+      })
       .catch((err) => console.log(err));
-  };
+    // }
+  }, []);
 
-  handleInputChange = (event) => {
+  // --------------TODO -------------- the search/filter portion
+  const handleInputChange = (search) => {
     // getting the value and name of the input which triggered the change
-    const { name, value } = event.target;
-
+    // const { name, value } = search.target;
+    // setSearch(name.value);
+    setSearch(search.target.value);
     // updating the input's state
-    this.setState({
-      [name]: value,
-    });
   };
 
-  render() {
-    return (
-      <div>
-        {this.state.search}
-        <Filters handleInputChange={this.handleInputChange} />
-        <EmployeeCard users={this.state.users} search={this.state.search} />
-      </div>
-    );
-  }
+  return (
+    <div>
+      {search}
+      <Filters handleInputChange={handleInputChange} />
+      <EmployeeCard users={users} search={search} />
+    </div>
+  );
 }
 
 export default Employees;
