@@ -6,14 +6,14 @@ import Filters from "../components/Filters.js/index.js";
 function Employees() {
   const [users, setUsers] = useState([]);
   const [search, setSearch] = useState("");
+  const [filterChoice, setfilterChoice] = useState("");
+  const [sortDropdown, setSortDropdown] = useState("");
   // state = {
   //   users: [],
   //   search: "",
   // };
 
   useEffect(() => {
-    // ----TODO ---- stop auto-updating useEffect
-    // if (!users) {
     API.getEmployees()
       .then((res) => {
         if (res.data.length === 0) {
@@ -25,23 +25,36 @@ function Employees() {
         setUsers(res.data.results);
       })
       .catch((err) => console.log(err));
-    // }
   }, []);
 
-  // --------------TODO -------------- the search/filter portion
-  const handleInputChange = (search) => {
-    // getting the value and name of the input which triggered the change
-    // const { name, value } = search.target;
-    // setSearch(name.value);
+  const handleSearchChange = (search) => {
     setSearch(search.target.value);
-    // updating the input's state
+  };
+
+  // dropdown filter simply gives us the name of what we Want to filter
+  const handlefilterChoiceChange = (filterChoice) => {
+    setfilterChoice(filterChoice.target.value);
+    console.log(filterChoice);
+  };
+  // dropdown to set what we want to sort by
+  const handleSortDropdownChange = (sortDropdown) => {
+    setSortDropdown(sortDropdown.target.value);
+    console.log(sortDropdown);
   };
 
   return (
     <div>
       {search}
-      <Filters search={search} handleInputChange={handleInputChange} />
-      <EmployeeCard users={users} search={search} />
+      <Filters
+        users={users}
+        search={search}
+        filterChoice={filterChoice}
+        sortDropdown={sortDropdown}
+        handleSearchChange={handleSearchChange}
+        handleDropdownChange={handlefilterChoiceChange}
+        handleSortDropdownChange={handleSortDropdownChange}
+      />
+      <EmployeeCard users={users} search={search} filterChoice={filterChoice} />
     </div>
   );
 }

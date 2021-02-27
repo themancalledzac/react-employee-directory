@@ -1,13 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 
-function EmployeeCard({ search, users }) {
+function EmployeeCard({ search, users, filterChoice }) {
+  // const [employees, setEmployees] = useState(users);
+
+  // const filterRemove = (search) => {
+  //   let filteredEmployees = employees.filter(
+  //     (employee) => employee.name === search
+  //   );
+  //   setEmployees(filteredEmployees);
+  // };
+
   return (
     <div className='card' style={{ margin: "2rem", borderRadius: "7px" }}>
+      {filterChoice}
       <div className='card-body' style={{ display: "flex", flexWrap: "wrap" }}>
         {users
-          // .filter((filterUser) => filterUser.includes({ search }))
+          // // this looks better---------------------------
+          // .filter((filterUser) => {
+          //   console.log(filterChoice)
+          //   if (filterChoice === 'name') {
+          //     filterUser.
+          //   }
+          //   return filterUser.filterChoice.includes(search);
+          // })
           .map((user) => (
             <div
+              key={user.phone}
               className='card-body'
               style={{ flex: "flex", maxWidth: "25%" }}
             >
