@@ -4,30 +4,30 @@ const Filters = ({
   search,
   handleSearchChange,
   filterChoice,
-  sortDropdown,
+  sortChoice,
   handlefilterChoiceChange,
-  handleSortDropdownChange,
+  handlesortChoiceChange,
 }) => {
   return (
     <div className='row'>
       <div className='col-sm-6'>
         <div className='card' style={{ margin: "2rem", borderRadius: "7px" }}>
           <div className='card-body'>
-            <form onChange={handlefilterChoiceChange}>
-              <div className='form-group'>
-                <label htmlFor='filter'>
-                  Filter By &nbsp;
-                  <select
-                    defaultValue={filterChoice}
-                    onChange={handlefilterChoiceChange}
-                  >
-                    <option value='name'>Name</option>
-                    <option value='phone'>Phone Number</option>
-                    <option value='email'>Email</option>
-                  </select>
-                </label>
-              </div>
-            </form>
+            <div className='form-group'>
+              <label htmlFor='filter'>
+                Filter By &nbsp;
+                <select
+                  name='filterChoice'
+                  id='filterChoice'
+                  onChange={handlefilterChoiceChange}
+                  defaultValue={filterChoice}
+                >
+                  <option value='name'>Name</option>
+                  <option value='phone'>Phone Number</option>
+                  <option value='email'>Email</option>
+                </select>
+              </label>
+            </div>
             <input
               type='text'
               className='form-control'
@@ -46,8 +46,10 @@ const Filters = ({
               <label htmlFor='sort'>
                 Sort by &nbsp;
                 <select
-                  value={sortDropdown}
-                  onChange={handleSortDropdownChange}
+                  name='sortChoice'
+                  id='sortChoice'
+                  onChange={handlesortChoiceChange}
+                  defaultValue={sortChoice}
                 >
                   <option value='first.name'>First Name</option>
                   <option value='last.name'>Last Name</option>

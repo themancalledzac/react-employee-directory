@@ -6,7 +6,12 @@ const Footer = () => {
   return (
     <nav
       className='footer navbar navbar-expand-lg navbar-dark bg-dark'
-      style={{ marginTop: "4rem", position: "absolute", bottom: "0" }}
+      style={{
+        marginTop: "4rem",
+        position: "absolute",
+        bottom: "0",
+        borderTop: "4rem",
+      }}
     >
       <NavLink className='navbar-brand' to='/'>
         Employee Directory

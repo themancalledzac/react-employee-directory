@@ -2,12 +2,13 @@ import React, { useEffect, useState } from "react";
 import API from "../utils/API";
 import EmployeeCard from "../components/EmployeeCard";
 import Filters from "../components/Filters.js/index.js";
+import "./employees.css";
 
 function Employees() {
   const [users, setUsers] = useState([]);
   const [search, setSearch] = useState("");
-  const [filterChoice, setfilterChoice] = useState("");
-  const [sortDropdown, setSortDropdown] = useState("");
+  const [filterChoice, setfilterChoice] = useState("name");
+  const [sortChoice, setSortChoice] = useState("first.name");
   // state = {
   //   users: [],
   //   search: "",
@@ -37,22 +38,24 @@ function Employees() {
     console.log(filterChoice);
   };
   // dropdown to set what we want to sort by
-  const handleSortDropdownChange = (sortDropdown) => {
-    setSortDropdown(sortDropdown.target.value);
-    console.log(sortDropdown);
+  const handlesortChoiceChange = (sortChoice) => {
+    setSortChoice(sortChoice.target.value);
+    console.log({ sortChoice });
   };
 
   return (
     <div>
-      {search}
+      {search} &nbsp;
+      {sortChoice} &nbsp;
+      {filterChoice}
       <Filters
         users={users}
         search={search}
         filterChoice={filterChoice}
-        sortDropdown={sortDropdown}
+        sortChoice={sortChoice}
         handleSearchChange={handleSearchChange}
-        handleDropdownChange={handlefilterChoiceChange}
-        handleSortDropdownChange={handleSortDropdownChange}
+        handlefilterChoiceChange={handlefilterChoiceChange}
+        handlesortChoiceChange={handlesortChoiceChange}
       />
       <EmployeeCard users={users} search={search} filterChoice={filterChoice} />
     </div>

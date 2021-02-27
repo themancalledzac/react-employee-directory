@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 
-function EmployeeCard({ search, users, filterChoice }) {
+function EmployeeCard({ search, users, filterChoice, sortChoice }) {
   // const [employees, setEmployees] = useState(users);
 
   // const filterRemove = (search) => {
@@ -12,13 +12,15 @@ function EmployeeCard({ search, users, filterChoice }) {
 
   return (
     <div className='card' style={{ margin: "2rem", borderRadius: "7px" }}>
-      {filterChoice}
+      <h1>
+        {filterChoice} hello {sortChoice} {search}
+      </h1>
       <div className='card-body' style={{ display: "flex", flexWrap: "wrap" }}>
         {users
           // // this looks better---------------------------
           // .filter((filterUser) => {
           //   console.log(filterChoice)
-          //   if (filterChoice === 'name') {
+          //   if (sortChoice === 'name') {
           //     filterUser.
           //   }
           //   return filterUser.filterChoice.includes(search);
