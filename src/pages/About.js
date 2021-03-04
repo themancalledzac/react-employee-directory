@@ -10,15 +10,13 @@ const About = () => {
       <div className='card-body'>
         <h1>Employee Directory</h1>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem
-          neque aspernatur tempore similique quam, sunt voluptatum, excepturi
-          nisi ratione omnis totam nihil modi deserunt rem! Explicabo, minus
-          libero sequi nostrum perferendis ipsa ad esse inventore odio, nobis
-          possimus dolore doloribus sed dicta! Voluptates aperiam dolorem non
-          delectus deleniti quia nisi?
+          In this ficticious company, my boss has asked for an employee
+          directory that allows him to search his employees by name, phone,
+          email, or country, while also being able to sort by first name, last
+          name, email, age, phone, or country.
         </p>
         <button>
-          <Link to='/employees'>To Employees</Link>
+          <Link to='/employees'>Your Employees</Link>
         </button>
       </div>
     </div>

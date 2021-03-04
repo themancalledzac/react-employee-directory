@@ -16,6 +16,24 @@ const Filters = ({
           <div className='card-body'>
             <form className='search' onChange={handleFilter}>
               <div className='form-group'>
+                <div className='form-group'>
+                  <label htmlFor='sort'>
+                    Sort by &nbsp;
+                    <select
+                      name='sortChoice'
+                      id='sortChoice'
+                      onChange={handlesortChoiceChange}
+                      defaultValue={sortChoice}
+                    >
+                      <option value='name.first'>First Name</option>
+                      <option value='name.last'>Last Name</option>
+                      <option value='email'>Email</option>
+                      <option value='age'>Age</option>
+                      <option value='phone'>Phone</option>
+                      <option value='country'>Country</option>
+                    </select>
+                  </label>
+                </div>
                 <label htmlFor='filter'>
                   Filter By &nbsp;
                   <select
@@ -40,30 +58,6 @@ const Filters = ({
                 onChange={handleSearchChange}
               />
             </form>
-          </div>
-        </div>
-      </div>
-      <div className='col-sm-6'>
-        <div className='card' style={{ margin: "2rem", borderRadius: "7px" }}>
-          <div className='card-body'>
-            <div className='form-group'>
-              <label htmlFor='sort'>
-                Sort by &nbsp;
-                <select
-                  name='sortChoice'
-                  id='sortChoice'
-                  onChange={handlesortChoiceChange}
-                  defaultValue={sortChoice}
-                >
-                  <option value='name.first'>First Name</option>
-                  <option value='name.last'>Last Name</option>
-                  <option value='email'>Email</option>
-                  <option value='age'>Age</option>
-                  <option value='phone'>Phone</option>
-                  <option value='country'>Country</option>
-                </select>
-              </label>
-            </div>
           </div>
         </div>
       </div>

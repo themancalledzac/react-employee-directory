@@ -1,6 +1,7 @@
 // import React, { useState } from "react";
 
 // import { useEffect } from "react";
+import "./style.css";
 
 function EmployeeCard({ search, users, filterChoice, sortChoice }) {
   // -----------------------------------------------------------------//
@@ -44,12 +45,7 @@ function EmployeeCard({ search, users, filterChoice, sortChoice }) {
 
   return (
     <div className='card' style={{ margin: "2rem", borderRadius: "7px" }}>
-      <h1>
-        {filterChoice} hello {sortChoice} {search}
-      </h1>
       <div className='card-body' style={{ display: "flex", flexWrap: "wrap" }}>
-        {filterChoice}
-
         {sortUsers.map((user) => (
           <div
             key={user.phone}

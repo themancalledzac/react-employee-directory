@@ -1,0 +1,9 @@
+.card {
+  margin: 2rem;
+  border-radius: 7px;
+}
+
+.card-body {
+  display: flex;
+  flex-wrap: wrap;
+}
