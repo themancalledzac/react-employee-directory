@@ -1,21 +1,5 @@
-// import React, { useState } from "react";
-
-// import { useEffect } from "react";
-import "./style.css";
-
 function EmployeeCard({ search, users, filterChoice, sortChoice }) {
-  // -----------------------------------------------------------------//
-  //                                                                  //
-  //                          OPTION #01                              //
-  //                       CURRENT BEST OPTION                        //
-  //                                                                  //
-  // -----------------------------------------------------------------//
   const filteredUsers = users.filter((filterUser) => {
-    // if (!search) return filterUser;
-    // return filterUser[filterChoice]
-    //   .toLowerCase()
-    //   .includes(search.toLowerCase());
-
     if (!search) return filterUser;
     if (filterChoice === "name")
       return (

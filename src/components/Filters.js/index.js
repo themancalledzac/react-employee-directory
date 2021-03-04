@@ -1,9 +1,7 @@
 import React from "react";
 
 const Filters = ({
-  search,
   handleSearchChange,
-  filterChoice,
   sortChoice,
   handlefilterChoiceChange,
   handlesortChoiceChange,
