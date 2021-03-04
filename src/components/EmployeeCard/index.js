@@ -10,6 +10,11 @@ function EmployeeCard({ search, users, filterChoice, sortChoice }) {
   //                                                                  //
   // -----------------------------------------------------------------//
   const filteredUsers = users.filter((filterUser) => {
+    // if (!search) return filterUser;
+    // return filterUser[filterChoice]
+    //   .toLowerCase()
+    //   .includes(search.toLowerCase());
+
     if (!search) return filterUser;
     if (filterChoice === "name")
       return (
@@ -18,6 +23,23 @@ function EmployeeCard({ search, users, filterChoice, sortChoice }) {
       );
     if (filterChoice === "phone") return filterUser.phone.includes(search);
     if (filterChoice === "email") return filterUser.email.includes(search);
+    if (filterChoice === "country")
+      return filterUser.location.country
+        .toLowerCase()
+        .includes(search.toLowerCase());
+  });
+
+  const sortUsers = [...filteredUsers].sort((a, b) => {
+    if (sortChoice === "name.first")
+      return a.name.first.localeCompare(b.name.first);
+    if (sortChoice === "name.last")
+      return a.name.last.localeCompare(b.name.last);
+    if (sortChoice === "email") return a.email.localeCompare(b.email);
+    if (sortChoice === "country")
+      return a.location.country.localeCompare(b.location.country);
+    if (sortChoice === "age") return parseInt(a.dob.age) - parseInt(b.dob.age);
+    if (sortChoice === "phone") return parseInt(a.phone) - parseInt(b.phone);
+    else return filteredUsers;
   });
 
   return (
@@ -28,7 +50,7 @@ function EmployeeCard({ search, users, filterChoice, sortChoice }) {
       <div className='card-body' style={{ display: "flex", flexWrap: "wrap" }}>
         {filterChoice}
 
-        {filteredUsers.map((user) => (
+        {sortUsers.map((user) => (
           <div
             key={user.phone}
             className='card-body'

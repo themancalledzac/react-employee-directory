@@ -10,18 +10,16 @@ function Employees() {
   const [filterChoice, setfilterChoice] = useState("name");
   const [sortChoice, setSortChoice] = useState("name.first");
   // const [error, setError] = useState("");
-  // state = {
-  //   users: [],
-  //   search: "",
-  // };
 
   useEffect(() => {
     API.getEmployees()
       .then((res) => {
         if (res.data.length === 0) throw new Error("No results found.");
         if (res.data.status === "error") throw new Error(res.data.message);
-
-        setUsers(res.data.results);
+        const sorted = [...res.data.results].sort((a, b) =>
+          a.name.first.localeCompare(b.name.first)
+        );
+        setUsers(sorted);
       })
       .catch((err) => console.log(err));
   }, []);
@@ -35,9 +33,8 @@ function Employees() {
     setfilterChoice(filterChoice.target.value);
   };
   // dropdown to set what we want to sort by
-  const handlesortChoiceChange = (sortChoice) => {
-    setSortChoice(sortChoice.target.value);
-    console.log({ sortChoice });
+  const handlesortChoiceChange = (e) => {
+    setSortChoice(e.target.value);
   };
 
   return (

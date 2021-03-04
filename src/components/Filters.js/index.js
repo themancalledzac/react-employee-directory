@@ -27,6 +27,7 @@ const Filters = ({
                     <option value='name'>Name</option>
                     <option value='phone'>Phone Number</option>
                     <option value='email'>Email</option>
+                    <option value='country'>Country</option>
                   </select>
                 </label>
               </div>
@@ -55,9 +56,11 @@ const Filters = ({
                   defaultValue={sortChoice}
                 >
                   <option value='name.first'>First Name</option>
-                  <option value='last.name'>Last Name</option>
+                  <option value='name.last'>Last Name</option>
                   <option value='email'>Email</option>
                   <option value='age'>Age</option>
+                  <option value='phone'>Phone</option>
+                  <option value='country'>Country</option>
                 </select>
               </label>
             </div>
