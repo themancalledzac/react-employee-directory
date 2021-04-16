@@ -39,7 +39,7 @@
 
 ## Description
 
-For this class assignment, we created an employee directory with React. This assignment required that we break up our application's UI into components, manage component state, and respond to user events.
+For this class assignment, we were tasked with creating an employee directory with React. Being the first react project, some successes were successfully breaking the project into components, passing state, but also getting the sorting and filtering to work flawlessly based off the desired outcome.
 
 ## User Story
 
