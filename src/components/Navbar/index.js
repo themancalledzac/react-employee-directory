@@ -35,6 +35,20 @@ const Navbar = () => {
               Employees
             </NavLink>
           </li>
+          <li className='nav-item'>
+            <NavLink
+              to='/'
+              className={
+                window.location.pathname === "/" ||
+                window.location.pathname === "/about"
+                  ? "nav-link active"
+                  : "nav-link"
+              }
+              onClick={() => window.open("https://www.zacedens.com", "_blank")}
+            >
+              Portfolio
+            </NavLink>
+          </li>
         </ul>
       </div>
     </nav>
