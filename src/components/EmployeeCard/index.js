@@ -29,13 +29,9 @@ function EmployeeCard({ search, users, filterChoice, sortChoice }) {
 
   return (
     <div className='card' style={{ margin: "2rem", borderRadius: "7px" }}>
-      <div className='card-body' style={{ display: "flex", flexWrap: "wrap" }}>
+      <div className='cards-body' style={{ display: "flex", flexWrap: "wrap" }}>
         {sortUsers.map((user) => (
-          <div
-            key={user.phone}
-            className='card-body'
-            style={{ flex: "flex", maxWidth: "25%" }}
-          >
+          <div key={user.phone} className='card-body'>
             <img
               alt='portrait'
               src={user.picture.large}
